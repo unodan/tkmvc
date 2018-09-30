@@ -4,4 +4,4 @@
 #    Date: 2018-09-20
 ########################################################################################################################
 
-from .controller import Controller
+from tkmvc.controllers.controller import Controller

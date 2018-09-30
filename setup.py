@@ -11,11 +11,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
+requirements = ['Click>=6.0',]
 
-setup_requirements = [ ]
+setup_requirements = []
 
-test_requirements = [ ]
+test_requirements = []
 
 setup(
     author="Dan Huckson",
@@ -45,7 +45,7 @@ setup(
     include_package_data=True,
     keywords='tkmvc',
     name='tkmvc',
-    packages=find_packages(include=['tkmvc', 'models', 'views', 'controllers']),
+    packages=find_packages(),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,

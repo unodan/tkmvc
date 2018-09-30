@@ -3,4 +3,4 @@
 #  Author: Dan Huckson, https://github.com/unodan
 #    Date: 2018-09-20
 ########################################################################################################################
-from .view import View
+from tkmvc.views.view import View
