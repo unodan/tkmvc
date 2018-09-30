@@ -6,4 +6,4 @@ from tkmvc.tkmvc import App
 
 __author__ = """Dan Huckson"""
 __email__ = 'danhuckson@hotmail.com'
-__version__ = '0.1.3'
+__version__ = '0.1.4'
