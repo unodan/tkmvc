@@ -5,9 +5,9 @@
 #    Date: 2018-09-19
 ########################################################################################################################
 
-from tkmvc.models import Model
-from tkmvc.views import View
-from tkmvc.controllers import Controller
+from tkmvc.models.model import Model
+from tkmvc.views.view import View
+from tkmvc.controllers.controller import Controller
 
 
 class App(Controller):  # The Controller
