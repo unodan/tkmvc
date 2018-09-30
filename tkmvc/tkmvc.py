@@ -29,5 +29,5 @@ class App(Controller):  # The Controller
         return False
 
     def defaults(self, key):
-        print(key)
+        print(321, key)
 
