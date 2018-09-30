@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 ########################################################################################################################
 #    File: main.py
 #  Author: Dan Huckson, https://github.com/unodan
@@ -28,4 +27,3 @@ class App(Controller):  # The Controller
 
     def defaults(self, key):
         print(321, key)
-
