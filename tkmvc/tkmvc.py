@@ -15,6 +15,10 @@ class App(Controller):  # The Controller
         super().__init__(*args, **kwargs)
 
         print(12321)
+        self.model = Model()
+        self.views = {'root': View(self)}
+
+        print(12345, self.model.value())
 
     def view(self, key):
         if key in self.views:
