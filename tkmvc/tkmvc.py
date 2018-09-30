@@ -5,9 +5,10 @@
 #    Date: 2018-09-19
 ########################################################################################################################
 
-from tkmvc.models.model import Model
-from tkmvc.views.view import View
-from tkmvc.controllers.controller import Controller
+
+from .models import Model
+from .views import View
+from .controllers import Controller
 
 
 class App(Controller):  # The Controller
@@ -16,7 +17,6 @@ class App(Controller):  # The Controller
 
         self.model = Model()
         self.views = {'root': View(self)}
-
 
         print(123, self.model.value())
 
