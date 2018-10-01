@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0',]
+requirements = ['Click>=6.0', ]
 
 setup_requirements = []
 
@@ -33,7 +33,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="TkMVC is a Model-View-Controller Framework base on the Tkinter GUI toolset.",
+    description="TkMVC is a Model-View-Controller Framework base on the Tkinter GUI toolkit.",
     entry_points={
         'console_scripts': [
             'tkmvc=tkmvc.cli:main',
@@ -45,7 +45,7 @@ setup(
     include_package_data=True,
     keywords='tkmvc',
     name='tkmvc',
-    packages=find_packages(),
+    packages=find_packages(exclude=['tests', ]),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
@@ -53,3 +53,5 @@ setup(
     version='0.1.12',
     zip_safe=False,
 )
+
+print(find_packages(exclude=['tests', ]))

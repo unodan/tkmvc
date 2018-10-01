@@ -3,4 +3,5 @@
 #  Author: Dan Huckson, https://github.com/unodan
 #    Date: 2018-09-20
 ########################################################################################################################
-from tkmvc.views.view import View
+from tkmvc.views.bank import Bank
+from tkmvc.views.teller import Teller

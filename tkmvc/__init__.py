@@ -4,7 +4,7 @@
 
 from tkmvc.tkmvc import App
 from tkmvc.models.model import Model
-from tkmvc.views.view import View
+from tkmvc.views.bank import Bank
 from tkmvc.controllers.controller import Controller
 
 __author__ = """Dan Huckson"""

@@ -4,6 +4,6 @@ if __name__ == '__main__':
     app = App()
 
     root = app.view('root')
-    root.title('Demo Application')
+    root.title('The Bank')
 
     app.mainloop()

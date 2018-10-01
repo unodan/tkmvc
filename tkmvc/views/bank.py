@@ -1,5 +1,5 @@
 ########################################################################################################################
-#    File: view.py
+#    File: bank.py
 #  Author: Dan Huckson, https://github.com/unodan
 #    Date: 2018-09-20
 ########################################################################################################################
@@ -7,7 +7,7 @@
 from tkinter import Toplevel, Label, Entry
 
 
-class View(Toplevel):  # View
+class Bank(Toplevel):  # View
     def __init__(self, master):
         Toplevel.__init__(self, master)
         self.protocol('WM_DELETE_WINDOW', self.master.destroy)
@@ -15,4 +15,8 @@ class View(Toplevel):  # View
         Label(self, text='Account Balance').pack(side='left')
         self.balance = Entry(self, width=8)
         self.balance.pack(side='left')
+
+    def set_balance(self, amount):
+        self.balance.delete(0, 'end')
+        self.balance.insert('end', str(amount))
 

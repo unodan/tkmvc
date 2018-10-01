@@ -6,8 +6,8 @@
 ########################################################################################################################
 
 
-from .models import Model
-from .views import View
+from .models import Model, Account
+from .views import Bank, Teller
 from .controllers import Controller
 
 
@@ -16,9 +16,15 @@ class App(Controller):  # The Controller
         super().__init__(*args, **kwargs)
 
         self.model = Model()
-        self.views = {'root': View(self)}
+        self.account = Account()
+        self.account.transaction.add_callback(self.update_account)
 
-        print(123, self.model.value())
+        self.views = {'root': Bank(self), 'teller': Teller(self)}
+
+        self.views['teller'].btn_deposit.config(command=self.make_deposit)
+        self.views['teller'].btn_withdrawal.config(command=self.make_withdrawal)
+
+        self.update_account(self.account.transaction.get())
 
     def view(self, key):
         if key in self.views:
@@ -26,5 +32,16 @@ class App(Controller):  # The Controller
 
         return False
 
-    def defaults(self, key):
+    def make_deposit(self):
+        self.account.deposit(int(self.views['teller'].amount.get()))
+
+    def make_withdrawal(self):
+        self.account.withdrawal(int(self.views['teller'].amount.get()))
+
+    def update_account(self, amount):
+        self.views['root'].set_balance(amount)
+
+
+    @staticmethod
+    def defaults(key):
         print(321, key)
