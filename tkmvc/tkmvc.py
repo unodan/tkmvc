@@ -6,7 +6,7 @@
 ########################################################################################################################
 
 
-from .models import Model, Account
+from .models import Account
 from .views import Bank, Teller
 from .controllers import Controller
 
@@ -15,11 +15,10 @@ class App(Controller):  # The Controller
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.model = Model()
         self.account = Account()
         self.account.transaction.add_callback(self.update_account)
 
-        self.views = {'root': Bank(self), 'teller': Teller(self)}
+        self.views = {'bank': Bank(self), 'teller': Teller(self)}
 
         self.views['teller'].btn_deposit.config(command=self.make_deposit)
         self.views['teller'].btn_withdrawal.config(command=self.make_withdrawal)
@@ -39,4 +38,4 @@ class App(Controller):  # The Controller
         self.account.withdrawal(int(self.views['teller'].amount.get()))
 
     def update_account(self, amount):
-        self.views['root'].set_balance(amount)
+        self.views['bank'].set_balance(amount)

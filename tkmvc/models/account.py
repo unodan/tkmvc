@@ -5,15 +5,6 @@
 ########################################################################################################################
 
 
-class Model:  # The Model
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def value():
-        return 10
-
-
 class Transaction:
     def __init__(self):
         self.value = 0
