@@ -22,7 +22,10 @@ class App(Controller):  # The Controller
             'bank': Bank(self, 'The Bank'),
             'bank_account': Account(self, 'My Account')
         }
+
         # self.views['bank_account'].withdraw()
+
+        print(222, self.views['bank'].btn_deposit)
 
         self.views['bank'].btn_deposit.config(command=self.make_deposit)
         self.views['bank'].btn_withdrawal.config(command=self.make_withdrawal)
