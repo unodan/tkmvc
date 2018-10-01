@@ -40,8 +40,3 @@ class App(Controller):  # The Controller
 
     def update_account(self, amount):
         self.views['root'].set_balance(amount)
-
-
-    @staticmethod
-    def defaults(key):
-        print(321, key)

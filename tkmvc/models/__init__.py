@@ -4,4 +4,4 @@
 #    Date: 2018-09-20
 ########################################################################################################################
 
-from tkmvc.models.model import Model, Account
+from tkmvc.models.account import Model, Account
