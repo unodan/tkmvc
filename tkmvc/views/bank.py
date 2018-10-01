@@ -7,7 +7,7 @@
 from tkinter import Toplevel, Label, Entry
 
 
-class Bank(Toplevel):  # View
+class Bank(Toplevel):  # A View
     def __init__(self, master, title):
         Toplevel.__init__(self, master)
         self.title(title)

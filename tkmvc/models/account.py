@@ -25,7 +25,7 @@ class Transaction:
         return self.value
 
 
-class Account:  # The Model
+class Account:  # A Model
     def __init__(self):
         self.transaction = Transaction()
 
