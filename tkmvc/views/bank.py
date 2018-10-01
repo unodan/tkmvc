@@ -1,10 +1,10 @@
 ########################################################################################################################
-#    File: bank.py
+#    File: main.py
 #  Author: Dan Huckson, https://github.com/unodan
-#    Date: 2018-09-20
+#    Date: 2018-09-19
+# Purpose: MVC (Model View Controller) Demo
 ########################################################################################################################
-
-from tkinter import Toplevel, Label, Entry
+from tkinter import Toplevel, Label, Entry, Button
 
 
 class Bank(Toplevel):  # A View
@@ -14,11 +14,12 @@ class Bank(Toplevel):  # A View
 
         self.protocol('WM_DELETE_WINDOW', self.master.destroy)
 
-        Label(self, text='Account Balance').pack(side='left')
-        self.balance = Entry(self, width=8)
-        self.balance.pack(side='left')
+        Label(self, text='Amount').pack(side='left')
+        self.amount = Entry(self, width=8)
+        self.amount.pack(side='left')
 
-    def set_balance(self, amount):
-        self.balance.delete(0, 'end')
-        self.balance.insert('end', str(amount))
+        self.btn_deposit = Button(self, text='Deposit', width=8)
+        self.btn_deposit.pack(side='left')
 
+        self.btn_withdrawal = Button(self, text='Withdrawal', width=8)
+        self.btn_withdrawal.pack(side='left')

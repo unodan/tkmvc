@@ -7,7 +7,7 @@
 
 
 from .models import Account
-from .views import Bank, Teller
+from .views import Bank, BankAccount
 from .controllers import Controller
 
 
@@ -18,10 +18,14 @@ class App(Controller):  # The Controller
         self.account = Account()
         self.account.transaction.add_callback(self.update_account)
 
-        self.views = {'bank': Bank(self, 'The Bank'), 'teller': Teller(self, 'The Teller')}
+        self.views = {
+            'bank': Bank(self, 'The Bank'),
+            'bank_account': BankAccount(self, 'My Account')
+        }
+        # self.views['bank_account'].withdraw()
 
-        self.views['teller'].btn_deposit.config(command=self.make_deposit)
-        self.views['teller'].btn_withdrawal.config(command=self.make_withdrawal)
+        self.views['bank'].btn_deposit.config(command=self.make_deposit)
+        self.views['bank'].btn_withdrawal.config(command=self.make_withdrawal)
 
         self.update_account(self.account.transaction.get())
 
@@ -32,10 +36,10 @@ class App(Controller):  # The Controller
         return False
 
     def make_deposit(self):
-        self.account.deposit(int(self.views['teller'].amount.get()))
+        self.account.deposit(int(self.views['bank'].amount.get()))
 
     def make_withdrawal(self):
-        self.account.withdrawal(int(self.views['teller'].amount.get()))
+        self.account.withdrawal(int(self.views['bank'].amount.get()))
 
     def update_account(self, amount):
-        self.views['bank'].set_balance(amount)
+        self.views['bank_account'].set_balance(amount)
