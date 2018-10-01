@@ -6,9 +6,9 @@
 ########################################################################################################################
 
 
-from .models import BankAccount
-from .views import Bank, Account
-from .controllers import Controller
+from tkmvc.models import BankAccount
+from tkmvc.views import Bank, Account
+from tkmvc.controllers import Controller
 
 
 class App(Controller):  # The Controller
