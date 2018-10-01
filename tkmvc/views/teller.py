@@ -8,8 +8,10 @@ from tkinter import Toplevel, Label, Entry, Button
 
 
 class Teller(Toplevel):  # View 2
-    def __init__(self, master):
+    def __init__(self, master, title):
         Toplevel.__init__(self, master)
+
+        self.title(title)
 
         Label(self, text='Amount').pack(side='left')
         self.amount = Entry(self, width=8)

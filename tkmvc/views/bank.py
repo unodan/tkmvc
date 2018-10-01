@@ -8,8 +8,10 @@ from tkinter import Toplevel, Label, Entry
 
 
 class Bank(Toplevel):  # View
-    def __init__(self, master):
+    def __init__(self, master, title):
         Toplevel.__init__(self, master)
+        self.title(title)
+
         self.protocol('WM_DELETE_WINDOW', self.master.destroy)
 
         Label(self, text='Account Balance').pack(side='left')

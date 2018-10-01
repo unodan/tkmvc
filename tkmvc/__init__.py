@@ -8,4 +8,4 @@ from tkmvc.controllers.controller import Controller
 
 __author__ = """Dan Huckson"""
 __email__ = 'danhuckson@hotmail.com'
-__version__ = '0.1.14'
+__version__ = '0.1.15'

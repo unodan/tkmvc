@@ -18,7 +18,7 @@ class App(Controller):  # The Controller
         self.account = Account()
         self.account.transaction.add_callback(self.update_account)
 
-        self.views = {'bank': Bank(self), 'teller': Teller(self)}
+        self.views = {'bank': Bank(self, 'The Bank'), 'teller': Teller(self, 'The Teller')}
 
         self.views['teller'].btn_deposit.config(command=self.make_deposit)
         self.views['teller'].btn_withdrawal.config(command=self.make_withdrawal)
