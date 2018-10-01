@@ -4,4 +4,4 @@
 #    Date: 2018-09-20
 ########################################################################################################################
 from tkmvc.views.bank import Bank
-from tkmvc.views.account import BankAccount
+from tkmvc.views.account import Account

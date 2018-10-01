@@ -6,8 +6,8 @@
 ########################################################################################################################
 
 
-from .models import Account
-from .views import Bank, BankAccount
+from .models import BankAccount
+from .views import Bank, Account
 from .controllers import Controller
 
 
@@ -15,12 +15,12 @@ class App(Controller):  # The Controller
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.account = Account()
+        self.account = BankAccount()
         self.account.transaction.add_callback(self.update_account)
 
         self.views = {
             'bank': Bank(self, 'The Bank'),
-            'bank_account': BankAccount(self, 'My Account')
+            'bank_account': Account(self, 'My Account')
         }
         # self.views['bank_account'].withdraw()
 

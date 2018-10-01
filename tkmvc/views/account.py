@@ -1,5 +1,5 @@
 ########################################################################################################################
-#    File: account.py
+#    File: bank_account.py
 #  Author: Dan Huckson, https://github.com/unodan
 #    Date: 2018-09-20
 ########################################################################################################################
@@ -7,7 +7,7 @@
 from tkinter import Toplevel, Label, Entry
 
 
-class BankAccount(Toplevel):  # A View
+class Account(Toplevel):  # A View
     def __init__(self, master, title):
         Toplevel.__init__(self, master)
         self.title(title)
