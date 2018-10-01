@@ -43,3 +43,4 @@ class App(Controller):  # The Controller
 
     def update_account(self, amount):
         self.views['bank_account'].set_balance(amount)
+        print('Account Updated.')
