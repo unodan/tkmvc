@@ -4,7 +4,7 @@
 #    Date: 2018-09-20
 ########################################################################################################################
 
-from tkinter import Toplevel, Label, Entry, StringVar, IntVar
+from tkinter import Toplevel, Label, Entry, StringVar, IntVar, LabelFrame
 
 
 class BankView(Toplevel):  # A View
@@ -14,30 +14,21 @@ class BankView(Toplevel):  # A View
 
         self.protocol('WM_DELETE_WINDOW', self.master.destroy)
 
-        self.balance = StringVar()
-        self.balance.set(0)
-        Label(self, text=' Balance ').pack(side='left')
-        self.account_balance = Entry(self, width=20, textvariable=self.balance)
-        self.account_balance.pack(side='left')
+        frame = LabelFrame(self, text='Interest')
 
         self.rate = StringVar()
         self.rate.set('0.0125')
-        Label(self, text=' Interest Rate ').pack(side='left')
-        self.interest_rate = Entry(self, width=8, textvariable=self.rate)
-        self.interest_rate.pack(side='left')
+        Label(frame, text=' Rate ').grid(sticky='e')
+        self.interest_rate = Entry(frame, width=8, textvariable=self.rate)
+        self.interest_rate.grid(padx=(0, 10), pady=(0, 10), row=0, column=1, sticky='w')
 
         self.period = IntVar()
         self.period.set(1000)
-        Label(self, text=' Interest Period ').pack(side='left')
-        self.interest_period = Entry(self, width=15, textvariable=self.period)
-        self.interest_period.pack(side='left')
+        Label(frame, text=' Time (APR) ').grid()
+        self.interest_period = Entry(frame, width=25, textvariable=self.period)
+        self.interest_period.grid(padx=(0, 10), pady=(0, 10), row=1, column=1)
 
-    def set_balance(self, amount):
-        self.account_balance.delete(0, 'end')
-        self.account_balance.insert('insert', str(amount))
-
-    def get_balance(self):
-        return float(self.balance.get())
+        frame.grid(pady=(0, 5), sticky='ew')
 
     def get_interest_rate(self):
         return float(self.rate.get())

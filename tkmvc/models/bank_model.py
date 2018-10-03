@@ -3,7 +3,6 @@
 #  Author: Dan Huckson, https://github.com/unodan
 #    Date: 2018-09-20
 ########################################################################################################################
-import threading
 
 
 class Transaction:
@@ -26,6 +25,6 @@ class Transaction:
         return self.value
 
 
-class Interest:  # A Model
+class Interest:
     def __init__(self):
         self.transaction = Transaction()

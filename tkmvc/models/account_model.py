@@ -25,13 +25,13 @@ class Transaction:
         return self.value
 
 
-class Account:  # A Model
+class Account:
     def __init__(self):
         self.transaction = Transaction()
 
     def deposit(self, value):
-        self.transaction.set(self.transaction.get() + value)
+        self.transaction.set(float(self.transaction.get()) + float(value))
 
     def withdrawal(self, value):
-        self.transaction.set(self.transaction.get() - value)
+        self.transaction.set(float(self.transaction.get()) - float(value))
 
