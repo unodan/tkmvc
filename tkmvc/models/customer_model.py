@@ -5,7 +5,7 @@
 ########################################################################################################################
 
 
-class Transaction:
+class Customer:
     def __init__(self):
         self.value = 0
         self.callbacks = {}
@@ -23,15 +23,3 @@ class Transaction:
 
     def get(self):
         return self.value
-
-
-class Account:
-    def __init__(self):
-        self.transaction = Transaction()
-
-    def deposit(self, value):
-        self.transaction.set(float(self.transaction.get()) + float(value))
-
-    def withdrawal(self, value):
-        self.transaction.set(float(self.transaction.get()) - float(value))
-

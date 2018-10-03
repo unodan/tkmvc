@@ -5,7 +5,7 @@
 ########################################################################################################################
 
 
-class Interest:
+class Teller:
     def __init__(self):
         self.value = 0
         self.callbacks = {}
@@ -23,3 +23,10 @@ class Interest:
 
     def get(self):
         return self.value
+
+    def deposit(self, value):
+        self.set(float(self.get()) + float(value))
+
+    def withdrawal(self, value):
+        self.set(float(self.get()) - float(value))
+

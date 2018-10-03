@@ -5,4 +5,4 @@
 ########################################################################################################################
 
 from tkmvc.models.bank_model import Interest
-from tkmvc.models.account_model import Account
+from tkmvc.models.teller_model import Teller

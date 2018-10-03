@@ -8,7 +8,7 @@
 from tkinter import Toplevel, Label, Entry, Button, StringVar, LabelFrame
 
 
-class AccountView(Toplevel):  # A View
+class TellerView(Toplevel):
     def __init__(self, master, title):
         Toplevel.__init__(self, master)
         self.title(title)
