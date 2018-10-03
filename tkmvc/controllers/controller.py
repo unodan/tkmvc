@@ -5,7 +5,7 @@
 ########################################################################################################################
 
 from tkinter import Tk
-from tkmvc.models import Teller, Bank
+from tkmvc.models import TellerModel, BankModel
 from tkmvc.views import TellerView, BankView, CustomerView
 
 
@@ -23,11 +23,11 @@ class Controller(Tk):
         self.view('teller').btn_deposit.config(command=self.make_deposit)
         self.view('teller').btn_withdrawal.config(command=self.make_withdrawal)
 
-        self.account = Teller()
+        self.account = TellerModel()
         self.account.add_callback(self.update_account)
         self.update_account(self.account.get())
 
-        self.interest = Bank()
+        self.interest = BankModel()
         self.interest.add_callback(self.add_interest)
         self.add_interest(self.interest.set(0))
 

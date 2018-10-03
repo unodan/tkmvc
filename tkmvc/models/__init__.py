@@ -4,5 +4,5 @@
 #    Date: 2018-09-20
 ########################################################################################################################
 
-from tkmvc.models.bank_model import Bank
-from tkmvc.models.teller_model import Teller
+from tkmvc.models.bank_model import BankModel
+from tkmvc.models.teller_model import TellerModel
