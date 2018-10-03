@@ -3,6 +3,7 @@
 #  Author: Dan Huckson, https://github.com/unodan
 #    Date: 2018-09-20
 ########################################################################################################################
+import threading
 
 
 class Transaction:
@@ -25,13 +26,6 @@ class Transaction:
         return self.value
 
 
-class BankAccount:  # A Model
+class Interest:  # A Model
     def __init__(self):
         self.transaction = Transaction()
-
-    def deposit(self, value):
-        self.transaction.set(self.transaction.get() + value)
-
-    def withdrawal(self, value):
-        self.transaction.set(self.transaction.get() - value)
-

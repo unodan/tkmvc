@@ -4,15 +4,14 @@
 #    Date: 2018-09-19
 # Purpose: MVC (Model View Controller) Demo
 ########################################################################################################################
+
 from tkinter import Toplevel, Label, Entry, Button
 
 
-class Bank(Toplevel):  # A View
+class TellerView(Toplevel):  # A View
     def __init__(self, master, title):
         Toplevel.__init__(self, master)
         self.title(title)
-
-        self.protocol('WM_DELETE_WINDOW', self.master.destroy)
 
         Label(self, text='Amount').pack(side='left')
         self.amount = Entry(self, width=8)

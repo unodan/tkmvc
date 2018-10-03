@@ -4,4 +4,5 @@
 #    Date: 2018-09-20
 ########################################################################################################################
 
-from tkmvc.models.bank_account import BankAccount
+from tkmvc.models.bank_model import Interest
+from tkmvc.models.account_model import Account
