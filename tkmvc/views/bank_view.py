@@ -1,7 +1,7 @@
 ########################################################################################################################
-#    File: teller_model.py
+#    File: bank_view.py
 #  Author: Dan Huckson, https://github.com/unodan
-#    Date: 2018-09-20
+#    Date: 2018-10-03
 ########################################################################################################################
 
 from tkinter import Toplevel, Label, Entry, StringVar, IntVar, LabelFrame

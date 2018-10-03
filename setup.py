@@ -50,6 +50,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/unodan/tkmvc',
-    version='0.1.25',
+    version='0.1.28',
     zip_safe=False,
 )

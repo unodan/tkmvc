@@ -1,11 +1,11 @@
 ########################################################################################################################
 #    File: controller.py
 #  Author: Dan Huckson, https://github.com/unodan
-#    Date: 2018-09-19
+#    Date: 2018-10-03
 ########################################################################################################################
 
 from tkinter import Tk
-from tkmvc.models import Teller, Interest
+from tkmvc.models import Teller, Bank
 from tkmvc.views import TellerView, BankView, CustomerView
 
 
@@ -27,7 +27,7 @@ class Controller(Tk):
         self.account.add_callback(self.update_account)
         self.update_account(self.account.get())
 
-        self.interest = Interest()
+        self.interest = Bank()
         self.interest.add_callback(self.add_interest)
         self.add_interest(self.interest.set(0))
 

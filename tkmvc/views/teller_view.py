@@ -1,8 +1,7 @@
 ########################################################################################################################
-#    File: main.py
+#    File: teller_view.py
 #  Author: Dan Huckson, https://github.com/unodan
-#    Date: 2018-09-19
-# Purpose: MVC (Model View Controller) Demo
+#    Date: 2018-10-03
 ########################################################################################################################
 
 from tkinter import Toplevel, Label, Entry, Button, StringVar, LabelFrame
